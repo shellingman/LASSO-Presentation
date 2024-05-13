@@ -27,7 +27,7 @@ x <- data.matrix(Cars[,c('mpg', 'wt', 'drat', 'qsec')]) #Miles/Gallon #Weight (1
 #stargazer(head(x),summary=FALSE)
 #Scaled#
 y <- norm_minmax(y)
-x <- norm_minmax(x)
+x <- apply(x, MARGIN = 2, FUN = norm_minmax)
 
 
 ####Model Estimation####
